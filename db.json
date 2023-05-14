@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "Name": "پوریا رفوسه",
+      "Dob": "1400/10/29",
+      "Gender": "male",
+      "Password": "",
+      "RPassword": "",
+      "Activition": true,
+      "Province": "تهران",
+      "City": "تهران",
+      "id": 6
+    },
+    {
+      "Name": "خسرو خسروشاهی",
+      "Dob": "1402/02/10",
+      "Gender": "male",
+      "Password": "asd",
+      "RPassword": "",
+      "Activition": true,
+      "Province": "اردبیل",
+      "City": "مشکین شهر",
+      "id": 7
+    },
+    {
+      "Name": "pooria",
+      "Dob": "1402/01/10",
+      "Gender": "male",
+      "Password": "dfgdfh",
+      "Rpassword": "",
+      "Activition": true,
+      "Province": "اصفهان",
+      "City": "خمینی شهر",
+      "id": 9
+    }
+  ]
+}

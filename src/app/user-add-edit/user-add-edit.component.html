@@ -1,0 +1,56 @@
+<div mat-dialog-title>
+    <h4> Add user </h4>
+</div>
+<form [formGroup]="userform" (ngSubmit)="OnformSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Pooria" formControlName="Name">
+            </mat-form-field>
+             <mat-form-field appearance="outline">
+                <ng-persian-datepicker>
+                    <input type="text" matInput formControlName="Dob" [formControl]="dateValue"/>
+                </ng-persian-datepicker>
+            </mat-form-field>
+            <mat-radio-group aria-label="Select an option" formControlName="Gender">
+                <mat-label> <b> Gender </b> </mat-label>
+                <mat-radio-button value="male"> Male </mat-radio-button>
+                <mat-radio-button value="female"> Female </mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Strong eg. 8 words" formControlName="Password">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>repeat Password</mat-label>
+                <input matInput type="password" placeholder="Same as Password" formControlName="Rpassword">
+            </mat-form-field>
+            <section class="activeSection">
+                <span>User Activition</span><br>
+                <mat-checkbox formControlName="Activition"> Check me! </mat-checkbox>
+            </section>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Province</mat-label>
+                <mat-select formControlName="Province" [(value)]="selectedProvince" (selectionChange)="onProvinceSelectionChange($event)">
+                    <mat-option value="">--Select a Province--</mat-option>
+                    <mat-option *ngFor="let val of provinces" [value]="val.provinceName">{{val.provinceName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <mat-select formControlName="City" [disabled]="!selectedProvince">
+                  <mat-option *ngFor="let city of filteredCities" [value]="city">{{city}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false"> Cancel </button>
+        <button mat-raised-button color="primary" type="submit"> {{data ? "Update": "Save"}} </button>
+    </div>
+</form>

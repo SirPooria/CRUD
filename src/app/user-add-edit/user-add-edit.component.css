@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+.content {
+    padding-top: 10px;
+}
+.row {
+    display: flex;
+    gap: 10px;
+}
+.row mat-form-field {
+    width: 100%;
+}
+.row mat-radio-group {
+    width: 100%;
+}
+.row .activeSection {
+    width: 100%;
+}
+.action {
+    padding: 0px 20px 25px;
+}
+.action button {
+    flex: 2;
+}

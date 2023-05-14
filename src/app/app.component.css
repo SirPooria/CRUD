@@ -1,0 +1,10 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.main-table {
+  margin: 0 auto;
+  max-width: 1248px;
+}
+.table-container {
+  max-width: 100%;
+}
